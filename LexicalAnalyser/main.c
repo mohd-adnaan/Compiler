@@ -5,6 +5,7 @@
 #include "main.h"
 int yylval;
 int yylex();
+
 const char* get_token_name(int token) {
 
 switch (token) {
@@ -38,7 +39,6 @@ switch (token) {
     case 28: return "RPREN";
     case 29: return "DOT";
     case 30: return "COLCO";
-    // ... add other token names here
     default: return "UNKNOWN";
     }
 }

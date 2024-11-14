@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
+        "delim",
         "stringliteral",
-        "yylex"
+        "yylex",
+        "yyparse"
     ]
 }

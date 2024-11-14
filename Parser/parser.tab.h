@@ -116,7 +116,7 @@
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 48 "parser.y"
+#line 47 "parser.y"
 {
     int ival;
     char *sval;

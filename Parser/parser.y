@@ -1,15 +1,13 @@
-
 %{
 #include <stdio.h>
 #include <stdlib.h>
-
 extern int yylex();
 extern int yylineno;
 extern char* yytext;
 extern int yyerror(const char *s);
-
 %}
 
+/*Token Declaration*/
 %token IF 1
 %token ELSE 2
 %token FOR 3
@@ -45,13 +43,14 @@ extern int yyerror(const char *s);
 %token RETURN 33
 %token AMPR 34
 
+/*Union*/
 %union {
     int ival;
     char *sval;
 }
 
 %%
-
+/*GRAMMAR RULES*/
 program : package_declaration import_declaration statements
 ;
 
@@ -100,6 +99,7 @@ arguments  : /* empty */
            | STRINGLITERAL
            | STRINGLITERAL COMMA ID
            | STRINGLITERAL COMMA ID COMMA ID
+           | STRINGLITERAL COMMA ID COMMA ID COMMA ID
            | AMPR ID
 ;
 
@@ -173,7 +173,6 @@ type : /* empty */
      | INT
      | FLOAT64
 ;
-
 %%
 
 int yyerror(const char *s) {

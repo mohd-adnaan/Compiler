@@ -3,12 +3,11 @@
 #include <stdlib.h>
 #include "parser.tab.h"
 %}
-
 %option yylineno
 
 /* Regular definitions */
-delim [ \t\n]
-ws {delim}+
+delim [ \t\n]           
+ws {delim}+             /*Multiple rules*/
 letter [A-Za-z]
 digit [0-9]
 id {letter}({letter}|{digit})*

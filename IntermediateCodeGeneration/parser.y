@@ -99,6 +99,7 @@ arguments  : /* empty */
            | STRINGLITERAL
            | STRINGLITERAL COMMA ID
            | STRINGLITERAL COMMA ID COMMA ID
+           | STRINGLITERAL COMMA ID COMMA ID COMMA ID
            | AMPR ID
 ;
 

@@ -2,7 +2,7 @@
 #include "string.h"
 #include "parser.tab.h"
 
-extern int yyparse(void);
+extern int yyparse(void);//from lex.yy.c
 extern FILE *yyin;
 
 int main() {

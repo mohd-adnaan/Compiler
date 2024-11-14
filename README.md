@@ -2,6 +2,8 @@
 
 This project is a simple compiler for a subset of the Go programming language, designed to perform lexical analysis and parsing on Go source code. The project utilizes `flex` for lexical analysis and `bison` for parsing, allowing the compiler to recognize tokens, parse expressions, and execute basic syntax checking on the Go code provided as input.
 
+![Compiler Flow Diagram](./CompilerFlowDiagram.png)
+
 ## Features
 - **Lexical Analysis**: Recognizes tokens like keywords, identifiers, numbers, operators, and symbols.
 - **Syntax Parsing**: Parses statements, expressions, and functions.

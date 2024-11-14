@@ -1,4 +1,3 @@
-
 %{
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,7 +8,7 @@
 
 /* Token definitions */
 %{
-#define IF 1
+#define IF 1                 /*Keywords*/
 #define ELSE 2
 #define FOR 3
 #define INT 4
@@ -19,11 +18,11 @@
 #define CONST 8
 #define OUTPUT 9
 #define ID 10
-#define NUMBER 11
+#define NUMBER 11            /*Numeric constants*/
 #define STRINGLITERAL 12
-#define OPEN_BRACKET 13
+#define OPEN_BRACKET 13      /*Special Symbols*/
 #define CLOSE_BRACKET 14
-#define PLUS 15
+#define PLUS 15              /*Operators*/
 #define MINUS 16
 #define MULTIPLY 17
 #define DIVIDE 18
@@ -42,19 +41,18 @@
 %}
 
 /* Regular definitions */
-delim [ \t\n]
+delim [ \t\n]   /* Defines whitespace characters*/
 ws {delim}+
-letter [A-Za-z]
-digit [0-9]
-id {letter}({letter}|{digit})*
-number {digit}+(\.{digit}+)?(E[+-]?{digit}+)?
+letter [A-Za-z] /* Defines letters */
+digit [0-9]     /* Define digits*/
+id {letter}({letter}|{digit})*   /*Variable names*/
+number {digit}+(\.{digit}+)?(E[+-]?{digit}+)?   /*big number*/
 stringliteral \"([^\\\n]|(\\.))*?\"
 
-/* Data type definitions */
-%%
-{ws} {/* No action and no return */}
-if      { yylval = IF; return IF; }
-else  { yylval = ELSE; return ELSE; }
+%%/*Matching Function*/
+{ws} {/* No action and no return */}            /* Data type definitions */
+if      { yylval = IF; return IF; }             /*return 1*/
+else  { yylval = ELSE; return ELSE; }           /*return 1*/
 for    { yylval = FOR; return FOR; }
 
 int     { yylval = INT; return INT; }
